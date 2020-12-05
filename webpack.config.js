@@ -1,11 +1,11 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
+  mode: 'development',
+  entry: './src/index.js',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -13,20 +13,28 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       }
     ]
   },
   devServer: {
     contentBase: [
-      path.join(__dirname, "dist"),
-      path.join(__dirname, "data"),
-      path.join(__dirname, "static")
+      path.join(__dirname, 'dist'),
+      path.join(__dirname, 'data'),
+      path.join(__dirname, 'static')
     ],
     compress: true,
     port: 9000
