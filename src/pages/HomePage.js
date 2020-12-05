@@ -50,7 +50,7 @@ function HomePage({ dispatch, data }) {
 const mapStateToProps = (state, ownProps) => {
   return {
     ...ownProps,
-    data: state.advisorsReducer.data
+    data: state.authorsReducer.data
   }
 };
 

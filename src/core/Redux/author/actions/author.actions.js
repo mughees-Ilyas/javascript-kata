@@ -1,10 +1,10 @@
 
-export const ADVISOR = 'ADVISOR';
-export const ADVISOR_SUCCESS = 'ADVISOR_SUCCESS';
-export const ADVISOR_FAIL = 'ADVISOR_FAIL';
+export const AUTHOR = 'AUTHOR';
+export const AUTHOR_SUCCESS = 'AUTHOR_SUCCESS';
+export const AUTHOR_FAIL = 'AUTHOR_FAIL';
 
 /**
  * invite user action
  */
-export const getAuthorData = () => ({ type: ADVISOR });
+export const getAuthorData = () => ({ type: AUTHOR });
 

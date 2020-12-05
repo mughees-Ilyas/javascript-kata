@@ -1,13 +1,12 @@
 import {
-  ADVISOR,
-  ADVISOR_FAIL,
-  ADVISOR_SUCCESS
+  AUTHOR,
+  AUTHOR_FAIL,
+  AUTHOR_SUCCESS
 } from '../actions/author.actions';
 import { put, takeLatest, all, call } from 'redux-saga/effects';
 import { environment } from '../../../../environment'
-const axios = require('axios');
 
-function fetchData(payload) {
+function fetchData() {
   let url = environment.API_URL + 'allData';
   return  fetch(url)
     .then(res => {
@@ -20,16 +19,16 @@ function fetchData(payload) {
     });
 }
 
-function* advisor(payload) {
-  const { data, ex } = yield call(fetchData,payload);
+function* author() {
+  const { data, ex } = yield call(fetchData);
   if (data)
-    yield put({ type:ADVISOR_SUCCESS, data });
+    yield put({ type:AUTHOR_SUCCESS, data });
   else
-    yield put({ type:ADVISOR_FAIL, ex });
+    yield put({ type:AUTHOR_FAIL, ex });
 }
 
 function* watchInvite() {
-  yield takeLatest(ADVISOR, advisor)
+  yield takeLatest(AUTHOR, author)
 }
 
 export default function* authorSaga() {

@@ -1,7 +1,7 @@
 import {
-  ADVISOR,
-  ADVISOR_FAIL,
-  ADVISOR_SUCCESS
+  AUTHOR,
+  AUTHOR_FAIL,
+  AUTHOR_SUCCESS
 } from '../actions/author.actions';
 
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
 // Reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADVISOR:
+    case AUTHOR:
       return {
         ...state,
         loading: true,
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         error: null,
       };
 
-    case ADVISOR_SUCCESS:
+    case AUTHOR_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         data: action.data
       };
 
-    case ADVISOR_FAIL:
+    case AUTHOR_FAIL:
       return {
         ...state,
         loading: false,
