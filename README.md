@@ -1,3 +1,12 @@
+# Retrospective
+
+The csv data cleaning and manuplation is done on node so after npm install please run "npm run start-node" to run the server and "npm run start" to run the react project.
+
+After we open the UI we can see the data object in browser console or in network tab. the end point I am calling is "AllData",
+
+Similarly 3 different end points exist in node file to get the data sepratly for books, authors, magzines.
+
+
 # JavaScript Kata - Part 1: Library
 
 Code kata in JavaScript where you have to write a library of books and magazines.
